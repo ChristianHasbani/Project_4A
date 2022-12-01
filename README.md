@@ -1,7 +1,7 @@
 # Project_4A
 Irregular verbs English Application
 
-## Architecture of the project
+# Architecture of the project
 
 This project implements the 3-tier architecture
 
