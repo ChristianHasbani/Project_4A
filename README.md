@@ -10,10 +10,11 @@ This project implements the 3-tier architecture
 The presentation tier is the user interface and communication layer of the application, where the end user interacts with the application.
 
 It contains 4 folders:
-    + Views which contains all the html/php files
-    + Scripts which contains all the JavaScript files
-    + Styles which contains the CSS files
-    + Assets which contains
+    
+    - Views which contains all the html/php files
+    - Scripts which contains all the JavaScript files
+    - Styles which contains the CSS files
+    - Assets which contains
 
 ## Data Access Layer(DAL)
 
