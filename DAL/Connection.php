@@ -1,20 +1,20 @@
 <?php
-//Opening a connection to MySQL
-function OpenCon() {
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "project_4a";
+ require_once 'pdoconfig.php';
+function connect(){
+    $config = new Config();
+    $dsn = "mysql:host=$config->host;dbname=$config->dbname";
     try {
-    $conn = new mysqli($host, $user, $password, $dbname) or die("Conn failed: %s\n" . $conn->error);
-    echo "Connection Successful";
-    return $conn;
-     } catch (PDOException $ex) {
-        echo "Connection failed: " . $ex->getMessage();
-    }
+        $conn = new PDO($dsn, $config->username, $config->password);
+        echo "Connected to '$config->dbname' at '$config->host' successfully.";
+        } catch (PDOException $pe) {
+        die ("Could not connect to the database '$config->dbname' :" . $pe->getMessage());
+            }
+    
 }
+
+
 //Closing a connection to MySQL
-function CloseConn($conn) {
+function disconnect($conn) {
     $conn->close();
 }
 
