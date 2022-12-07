@@ -1,6 +1,6 @@
 <?php
-
 include_once("DAL\Connection.php");
-connect()
+$conn = new Connection();
+$conn->connect();
 
 ?>

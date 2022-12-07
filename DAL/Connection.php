@@ -1,21 +1,29 @@
 <?php
  require_once 'pdoconfig.php';
-function connect(){
-    $config = new Config();
-    $dsn = "mysql:host=$config->host;dbname=$config->dbname";
-    try {
-        $conn = new PDO($dsn, $config->username, $config->password);
-        echo "Connected to '$config->dbname' at '$config->host' successfully.";
+class Connection
+{
+    private $conn;
+    public function connect()
+    {
+        $config = new Config();
+        $host = $config->getHost();
+        $dbname = $config->getdb();
+        $username = $config->getUsername();
+        $password = $config->getPassword();
+        $dsn = "mysql:host=$host;dbname=$dbname";
+        try {
+            $conn = new PDO($dsn, $username, $password);
         } catch (PDOException $pe) {
-        die ("Could not connect to the database '$config->dbname' :" . $pe->getMessage());
-            }
-    
+            die("Could not connect to the database '$dbname' :" . $pe->getMessage());
+        }
+        return $conn;
+    }
+
+
+    //Closing a connection to MySQL
+    public function disconnect()
+    {
+        $conn = null;
+    }
 }
-
-
-//Closing a connection to MySQL
-function disconnect($conn) {
-    $conn->close();
-}
-
 ?>
