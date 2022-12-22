@@ -1,0 +1,96 @@
+/*<link href="//db.onlinewebfonts.com/c/6a17929c7360288d1242981da7712dc3?family=Torus+Notched" 
+          rel="stylesheet"
+          type="text/css"/>
+
+          <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
+*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "poppins";
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    font-family: "torus notched";
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 1920px;
+    
+    
+}
+            /* HEADER */
+header{
+    height: 120px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    
+    
+}
+
+header .container{
+    width: 1500px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: violet;
+    
+}
+
+header .container ul{
+    display: flex;
+    align-items: center;
+    
+    
+}   
+
+header .container ul a{
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 0 20px;
+    
+}
+
+
+            /* SECTION 1 */
+
+
+.sec1{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    background-image: url(image/background_image.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.sec1 .container{
+    width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sec1 h1{
+    font-size: 8em;
+    margin-bottom: 70px;
+    color: #31489f;
+
+}
