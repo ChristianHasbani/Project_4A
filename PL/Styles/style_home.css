@@ -74,7 +74,7 @@ header .container ul a{
         height: 75vh;
         width: 100%;
         background-color: white;
-        background-image: url(../image/background_image.jpg);
+        background-image: url(../Assets/image/background_image.jpg);
         background-repeat: no-repeat;
         background-position: top right;
     }
