@@ -20,9 +20,12 @@ button {
 body {
     overflow-x: hidden;
     max-width: 1920px;
-    
-    
+    display: flex;
+    flex-direction: column;
 }
+
+
+
             /* HEADER */
 header{
     height: 120px;
@@ -59,3 +62,57 @@ header .container ul a{
     margin: 0 20px;
     
 }
+
+/*       DIV TEST      */
+
+.test{
+    margin-top: 120px;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    background-image: url(../image/Capture\ d’écran\ 2023-01-16\ 141508.png);
+    background-repeat: no-repeat;    
+    background-position: top;
+}
+
+.test p{
+    width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.test button{
+    background-color: #007bff; /* couleur de fond */
+    color: #fff; /* couleur du texte */
+    border: none; /* enlève la bordure */
+    padding: 10px 20px; /* ajoute de l'espace autour du texte */
+    border-radius: 5px; /* ajoute des bords arrondis */
+    font-size: 18px; /* change la taille de police */
+    text-transform: uppercase; /* met le texte en majuscule */
+    letter-spacing: 1px; /* ajoute de l'espacement entre les lettres */
+    font-weight: bold; /* met en gras le texte */
+    cursor: pointer; /* change le curseur en forme de pointeur lorsque l'utilisateur passe sur le bouton */
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3); /* ajoute une ombre */
+    transition: all 0.2s; /* ajoute une transition pour les effets hover */
+    width: 300px;
+    height: 50px;
+    margin-top: 400px;
+}
+
+/*@media (max-width: 950px){
+    .sec1 .container {
+        text-align: center;
+        justify-content:  center;
+        width: 100%;
+    }
+
+    .sec1{
+        padding-top: 100px;
+        height: 100%;
+        
+    }
+}
+*/
