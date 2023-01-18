@@ -1,13 +1,14 @@
 <?php
-include_once("DAL\Connection.php");
+include_once("Connection.php");
 
 
 function fetchVerbs(){
-    $conn = new Connection();
-    $pdo = $conn->connect();
-    $sql = 'SELECT * FROM verb';
-    $query = $pdo->query($sql);
-    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $pdo = connect();
+    $sql = "SELECT * FROM verb";
+    // $query = $pdo->query($sql);
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    disconnect($pdo);
     return $query;
 }
 
