@@ -1,9 +1,6 @@
-<?php 
-include('../../BLL/versManager.php'); 
-require_once('../../DTO/Responses/GetUserByUsernameDTOResponse.php');
+<?php
 require_once('../../DTO/Responses/GetUserByUsernameDTOResponse.php');
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +8,10 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verbs</title>
-    <link rel="stylesheet" href="../Styles/style_verbs.css">
-</head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/style_home.css">
 
+</head>
 <body>
     <header>
         <div class="container">
@@ -42,40 +39,14 @@ session_start();
             </div>
         </div>
     </header>
-
-    <div class="liste">
-          <!-- Get all verbs from Database -->
-          <?php $verbs = getAllVerbs()->getResult()->fetchAll(PDO::FETCH_ASSOC);?>
-           <!-- <script src = "../Scripts/verbs.js" defer></script> -->
-        <div class="Lpresent">
-            <ul id="present"></ul>
-            <li>Infinitive</li>
-            <!-- printing rows from database -->
-            <?php foreach($verbs as $verb){
-                echo '<li>' . $verb['infinitive'] . '</li>';    
-            } ?>
+    <div class="sec1">
+        <div class="container">
+            <h1>Irregular <br /> Verbs</h1>
         </div>
-
-        <div class="Lpassé">
-            <ul id="passé"></ul>
-            <li>Simple Past</li>
-             <!-- printing rows from database -->
-            <?php foreach($verbs as $verb){
-                echo '<li>' . $verb['simple_past'] . '</li>';    
-            } ?>
-        </div>
-
-        <div class="Lpassé2">
-            <ul id="passé2"></ul>
-            <li>Past Participle</li>
-             <!-- printing rows from database -->
-            <?php foreach($verbs as $verb){
-                echo '<li>' . $verb['past_participle'] . '</li>';    
-            } ?>
-        </div>
-        
-           
-
     </div>
+
+    <p>
+        BLABLA
+    </p>
 </body>
 </html>

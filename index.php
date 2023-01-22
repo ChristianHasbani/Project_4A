@@ -1,4 +1,3 @@
 <?php
-
-header("Location: PL\Views\home.html");
+header("Location: PL\Views\loginForm.php");
 ?>
