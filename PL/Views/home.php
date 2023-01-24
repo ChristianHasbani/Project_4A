@@ -23,7 +23,7 @@ session_start();
                 <ul>
                     <li><a href="../Views/home.php">Accueil</a></li>
                     <li><a href="../Views/verbs.php">Liste des verbes</a></li>
-                    <li><a href="../Views/test.php">English Test</a></li>
+                    <li><a href="../Views/pretest.php">English Test</a></li>
                     <li><a href="../Views/account.php">Mon compte</a></li>
                     <?php 
                         if (!isset($_SESSION['loggedUser'])) {
@@ -41,9 +41,14 @@ session_start();
             <h1>Irregular <br /> Verbs</h1>
         </div>
     </div>
+    <div class="sec2">
+        <p>Bienvenue sur notre site dédié à l'apprentissage des verbes irréguliers en anglais!
+            Avec notre aide, vous pourrez maîtriser facilement ces verbes et améliorer votre anglais en général.
+             Nous vous offrons des exercices interactifs et des tests pour vous entraîner.
+              Rejoignez notre communauté d'apprenants et découvrez la simplicité de l'apprentissage des verbes 
+              irréguliers avec nous. Commencez dès maintenant!
+            </p>
+    </div>
 
-    <p>
-        
-    </p>
 </body>
 </html>

@@ -60,61 +60,41 @@ header .container ul a{
     
 }
 
+/*       DIV TEST      */
 
-            /* SECTION 1 */
-
-@media (min-width: 950px) {
-    .sec1{
-        height: 75vh;
-        width: 100%;
-        background-color: white;
-        background-image: url(../Assets/image/background_image.jpg);
-        background-repeat: no-repeat;
-        background-position: top right;
-    }
-    
+.test{
+    margin-top: 120px;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    background-image: url(../Assets/image/image_pretest.png);
+    background-repeat: no-repeat;    
+    background-position: top;
 }
 
-.sec1 .container{
+.test p{
     width: 1500px;
     height: 100%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
-.sec1 h1{
-    font-size: 8em;
-    margin-bottom: 70px;
-    color: #31489f;
-
-}
-
-@media (max-width: 950px){
-    .sec1 .container {
-        text-align: center;
-        justify-content:  center;
-        width: 100%;
-    }
-
-    .sec1{
-        padding-top: 100px;
-        height: 100%;
-        
-    }
-}
-
-/*     SEC2    */
-
-.sec2{
-    height: 50vh;
-    width: 100%;
-    background-color: black;
-}
-
-.sec2 p{
-    padding:20px ;
-    color: #31489f;
-    font-size: 3em;
+.test button{
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 18px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3); 
+    transition: all 0.2s; 
+    width: 300px;
+    height: 50px;
+    margin-top: 400px;
 }
