@@ -14,6 +14,8 @@ include_once('../../DTO/Responses/GetPhrasesByLevelDTOResponse.php');
 include_once('../../DTO/Responses/GetVerbByIdDTOResponse.php');
 include_once('../../DTO/Requests/GetVerbByIdDTORequest.php');
 
+
+
 function getAllVerbs(){
     $verbs = fetchVerbs()->getResult();
     $getAllVerbsDTOResponse = new GetAllVerbsDTOResponse($verbs);
@@ -21,41 +23,42 @@ function getAllVerbs(){
 }
 
 function GetQuestions($getQuestionsDTORequest){
-    $questionsArray = array();
     $level = $getQuestionsDTORequest->getLevel();
     $getPhrasesByLevelDTORequest = new GetPhrasesByLevelDTORequest($level);
     $questions = getPhrasesByLevel($getPhrasesByLevelDTORequest)->getResult()->fetchAll(PDO::FETCH_ASSOC);
     shuffle($questions);
     $questions = array_slice($questions,0,5);
-    foreach ($questions as $question){
-        $verbId = $question['verb_id'];
+    for ($i = 0; $i < count($questions); $i++){
+        $verbId = $questions[$i]['verb_id'];
         $getVerbByIdDTORequest = new GetVerbByIdDTORequest($verbId);
         $verb = getVerbById($getVerbByIdDTORequest);
-        if($question['phrase_tense'] == 'Infinitive'){
+        if($questions[$i]['phrase_tense'] == 'Infinitive'){
             $find = $verb->getInfinitive();
             $replace = '________';
-            $arr = $question['phrase'];
+            $arr = $questions[$i]['phrase'];
             $replacedPhrase = str_replace($find,$replace,$arr);
-            // $question['phrase'] = $replacedPhrase;
-            array_push($questionsArray, $replacedPhrase);
-        }elseif($question['phrase_tense'] == 'Simple Past'){
+            unset($questions[$i]['phrase']);
+            $questions[$i]['phrase'] = $replacedPhrase;
+        }elseif($questions[$i]['phrase_tense'] == 'Simple Past'){
             $find = $verb->getSimplePast();
             $replace = '________';
-            $arr = $question['phrase'];
+            $arr = $questions[$i]['phrase'];
             $replacedPhrase = str_replace($find,$replace,$arr);
-            // $question['phrase'] = $replacedPhrase;
-            array_push($questionsArray, $replacedPhrase);
+            unset($questions[$i]['phrase']);
+            $questions[$i]['phrase'] = $replacedPhrase;
+            
         }else{
             $find = $verb->getPastParticiple();
             $replace = '________';
-            $arr = $question['phrase'];
+            $arr = $questions[$i]['phrase'];
             $replacedPhrase = str_replace($find,$replace,$arr);
-            // $question['phrase'] = $replacedPhrase;
-            array_push($questionsArray, $replacedPhrase);
+            unset($questions[$i]['phrase']);
+            $questions[$i]['phrase'] = $replacedPhrase;
         }
-        $getQuestionsDTOResponse = new GetQuestionsDTOResponse($questionsArray);
     }
+    $getQuestionsDTOResponse = new GetQuestionsDTOResponse($questions);
     return $getQuestionsDTOResponse;
 }
+
 
 ?>

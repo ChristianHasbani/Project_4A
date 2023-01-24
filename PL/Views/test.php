@@ -4,6 +4,11 @@ include('../../BLL/versManager.php');
 
 include_once('../../DTO/Requests/GetQuestionsDTORequest.php');
 
+include_once('../../DTO/Requests/GetVerbByIdDTORequest.php');
+
+
+
+
 session_start();
 if (!isset($_SESSION['loggedUser'])) {
     echo "<script type='text/javascript'>"
@@ -52,16 +57,19 @@ if (!isset($_SESSION['loggedUser'])) {
         <?php
         $getQuestionsDTORequest = new GetQuestionsDTORequest($_SESSION['loggedUser']->getLevel());
         $questions = GetQuestions($getQuestionsDTORequest)->getResult();
-       
-        // print_r($questions[0]['phrase'].'<br>');
-        // print_r($questions[1]['phrase'].'<br>');
-        // print_r($questions[2]['phrase'].'<br>');
+        
         foreach($questions as $question){
-
-            echo '<p>'.$question.'</p>';
+            echo '<p>'.$question['phrase'].'</p>';
+            $id = $question['verb_id'];
+            $getVerbByIdDTORequest = new GetVerbByIdDTORequest($id);
+            $verbs = getVerbById($getVerbByIdDTORequest);
+            echo '<input type="radio" name="' . $question['id'] . 'test">'.$verbs->getInfinitive();
+            echo '<input type="radio" name="' . $question['id'] . 'test">'.$verbs->getSimplePast();
+            echo '<input type="radio" name="' . $question['id'] . 'test">'.$verbs->getPastParticiple();
         }
-
+        // print_r($questions);
         ?>
+        <!-- <input type="radio" name="test">test -->
         
     </div>
 </body>
