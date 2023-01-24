@@ -39,14 +39,18 @@ if (!isset($_SESSION['loggedUser'])) {
             </div>
         </div>
     </header>
-    <div>
-    <ul>
-        <li>Username: <?php echo $_SESSION['loggedUser']->getUsername();?></li>
-        <li>First Name: <?php echo $_SESSION['loggedUser']->getFirstname();?></li>
-        <li>Last Name: <?php echo $_SESSION['loggedUser']->getLastName();?></li>
-        <li>Level: <?php echo $_SESSION['loggedUser']->getLevel();?></li>
-        <li>Average Score: <?php echo $_SESSION['loggedUser']->getAvgScore();?></li>
-    </ul>
+
+
+    <div class="compte">
+        <div class="carre">
+            <ul>
+                <li>Username: <?php echo $_SESSION['loggedUser']->getUsername();?></li>
+                <li>First Name: <?php echo $_SESSION['loggedUser']->getFirstname();?></li>
+                <li>Last Name: <?php echo $_SESSION['loggedUser']->getLastName();?></li>
+                <li>Level: <?php echo $_SESSION['loggedUser']->getLevel();?></li>
+                <li>Average Score: <?php echo $_SESSION['loggedUser']->getAvgScore();?></li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

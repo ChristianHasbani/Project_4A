@@ -69,12 +69,20 @@ session_start();
             <ul id="passé2"></ul>
             <li>Past Participle</li>
              <!-- printing rows from database -->
-            <?php foreach($verbs as $verb){
+             <?php foreach($verbs as $verb){
                 echo '<li>' . $verb['past_participle'] . '</li>';    
             } ?>
         </div>
+
+        <div class ="Ltranslation">
+            <ul id="translation"></ul>
+            <li>Traduction</li>
+            <?php foreach($verbs as $verb){
+                echo '<li>' . $verb['verb_translation'] . '</li>';    
+            } ?>
+        </div>
         
-           
+    
 
     </div>
 </body>

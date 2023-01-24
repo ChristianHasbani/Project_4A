@@ -46,7 +46,7 @@ session_start();
     </div>
 
     <p>
-        BLABLA
+        
     </p>
 </body>
 </html>

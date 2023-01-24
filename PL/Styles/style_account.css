@@ -59,3 +59,54 @@ header .container ul a{
     margin: 0 20px;
     
 }
+
+/*            DIV COMPTE               */
+
+.compte{
+    width: 100%;
+    height: 100vh;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compte .carre{
+    width: 60%;
+    height: 50vh;
+    background-image: url(../Assets/image/cat.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.compte ul{
+    margin-top: 20px;
+    width: 100%;
+   
+}
+
+.compte li{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top:20px;
+    height: 40px;
+    background-color: #f2f2f2; 
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

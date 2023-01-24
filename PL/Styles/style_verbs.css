@@ -3,7 +3,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: "poppins";
+    font-family: "calibri";
     scroll-behavior: smooth;
 }
 
@@ -74,21 +74,23 @@ header .container ul a{
 }
 .liste div{
     margin-left: 50px;
+    width: fit-content;
 }
 
+
 .liste ul {
-    width: 15%;
     list-style-type: none; /* enlève les puces */
     padding: 0; /* enlève les marges */
     margin: 0; /* enlève les marges */
 }
     
 .liste li {
-    padding: 10px; /* ajoute de l'espace autour des éléments de la liste */
-    margin-bottom: 10px; /* ajoute de l'espace en dessous des éléments de la liste */
-    background-color: #f2f2f2; /* change la couleur de fond des éléments de la liste */
+    width: 140px;
+    padding: 10px; 
+    margin-bottom: 10px; 
+    background-color: #f2f2f2; 
     border-radius: 5px; /* ajoute des bords arrondis aux éléments de la liste */
-    font-size: 18px; /* change la taille de police des éléments de la liste */
+    font-size: 18px; 
     font-weight: bold; /* met en gras les éléments de la liste */
-    width: 100px;
+    
 }
