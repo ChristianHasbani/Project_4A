@@ -25,6 +25,7 @@ if (!isset($_SESSION['loggedUser'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tests</title>
     <link rel="stylesheet" href="../Styles/style_test.css">
+    
 </head>
 <body>
     <header>
