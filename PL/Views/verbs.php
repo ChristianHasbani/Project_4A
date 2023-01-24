@@ -20,7 +20,7 @@ session_start();
         <div class="container">
             <div class="logo">
                 <img src="../Assets/image/flags.jpg" alt="" style="width: 100px;">
-            </div>
+        </div>
 
             <div class="onglet">
                 <ul>
@@ -36,9 +36,6 @@ session_start();
                         }
                     ?>
                 </ul>
-            </div>
-            <div class="logo">
-
             </div>
         </div>
     </header>
