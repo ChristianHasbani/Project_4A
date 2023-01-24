@@ -43,6 +43,12 @@ if (!isset($_SESSION['loggedUser'])) {
             transition: all 0.2s; 
             width: 300px;
             height: 50px;
+            margin-top: 30px;
+        }
+
+        input[type=radio]{
+            margin-top:10px;
+            margin-bottom:10px;
         }
     </style>
 </head>

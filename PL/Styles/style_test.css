@@ -123,4 +123,12 @@ header .container ul a{
 
 .test form{
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
+
+.test p{
+    margin-top: 20px;
+}
+
