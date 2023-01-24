@@ -49,27 +49,37 @@ if (!isset($_SESSION['loggedUser'])) {
     </header>
     
     <div class="test">
-        <!-- <script src="../Scripts/test.js" defer></script>
-        <p><button id="start">Démarrer le test</button></p> -->
-    <br>
-    <br>
-    <br>
-        <?php
-        $getQuestionsDTORequest = new GetQuestionsDTORequest($_SESSION['loggedUser']->getLevel());
-        $questions = GetQuestions($getQuestionsDTORequest)->getResult();
-        
-        foreach($questions as $question){
-            echo '<p>'.$question['phrase'].'</p>';
-            $id = $question['verb_id'];
-            $getVerbByIdDTORequest = new GetVerbByIdDTORequest($id);
-            $verbs = getVerbById($getVerbByIdDTORequest);
-            echo '<input type="radio" name="' . $question['id'] . 'test">'.$verbs->getInfinitive();
-            echo '<input type="radio" name="' . $question['id'] . 'test">'.$verbs->getSimplePast();
-            echo '<input type="radio" name="' . $question['id'] . 'test">'.$verbs->getPastParticiple();
+   
+    <?php
+      $getQuestionsDTORequest = new GetQuestionsDTORequest($_SESSION['loggedUser']->getLevel());
+      $questions = GetQuestions($getQuestionsDTORequest)->getResult();
+      $counter = 1;
+        $ids = '';
+      for($i = 0; $i < count($questions) ; $i++){
+        if($i == count($questions) - 1){
+            $ids = $ids . $questions[$i]['id'].'';
+        }else{
+             $ids = $ids . $questions[$i]['id'].',' ;
         }
-        // print_r($questions);
-        ?>
-        <!-- <input type="radio" name="test">test -->
+     }
+    ?>
+       <form action="testScores.php?id=<?php echo $ids ?>" method="post">
+        <?php
+            foreach($questions as $question){
+                echo '<p>'.$counter.'-'.$question['phrase'].'</p><br>';
+                $id = $question['verb_id'];
+                $getVerbByIdDTORequest = new GetVerbByIdDTORequest($id);
+                $verbs = getVerbById($getVerbByIdDTORequest);
+                echo '<input type="radio" name="question' . $counter . '">'.$verbs->getInfinitive();
+                echo '<input type="radio" name="question' . $counter . '">'.$verbs->getSimplePast();
+                echo '<input type="radio" name="question' . $counter . '">'.$verbs->getPastParticiple();
+                $counter++;
+            }
+            ?>
+            <br>
+            <br>
+            <input type="submit" value="Submit" name="submit">
+       </form>
         
     </div>
 </body>

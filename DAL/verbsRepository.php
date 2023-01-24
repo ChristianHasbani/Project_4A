@@ -15,6 +15,12 @@ include_once('../../DTO/Responses/GetVerbByIdDTOResponse.php');
 include_once('../../DTO/Responses/GetVerbByIdDTOResponse.php');
 include_once('../../DTO/Requests/GetVerbByIdDTORequest.php');
 
+include_once('../../DTO/Requests/GetPhrasesByIDFromDBDTORequest.php');
+include_once('../../DTO/Responses/GetPhrasesByIDFromDBDTOResponse.php');
+
+include_once('../../DTO/Requests/GetPhraseByIdDTORequest.php');
+include_once('../../DTO/Responses/GetPhraseByIdDTOResponse.php');
+
 function fetchVerbs(){
     $pdo = connect();
     try{

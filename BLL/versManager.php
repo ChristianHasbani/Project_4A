@@ -14,7 +14,8 @@ include_once('../../DTO/Responses/GetPhrasesByLevelDTOResponse.php');
 include_once('../../DTO/Responses/GetVerbByIdDTOResponse.php');
 include_once('../../DTO/Requests/GetVerbByIdDTORequest.php');
 
-
+include_once('../../DTO/Requests/GetPhrasesByIDFromDBDTORequest.php');
+include_once('../../DTO/Responses/GetPhrasesByIDFromDBDTOResponse.php');
 
 function getAllVerbs(){
     $verbs = fetchVerbs()->getResult();
@@ -60,5 +61,13 @@ function GetQuestions($getQuestionsDTORequest){
     return $getQuestionsDTOResponse;
 }
 
+
+function getPhrasesByIDFromDB($getPhrasesBtIDFromDBDTORequest){
+    $id = $getPhrasesBtIDFromDBDTORequest->getId();
+    $getPhraseByIdDTORequest = new GetPhraseByIdDTORequest($id);
+    $phrase = getPhrasebyId($getPhraseByIdDTORequest);
+    $getPhrasesByIDFromDBDTOResponse = new GetPhrasesByIDFromDBDTOResponse($phrase);
+    return $getPhrasesByIDFromDBDTOResponse;
+}
 
 ?>
