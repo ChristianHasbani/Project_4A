@@ -1,6 +1,9 @@
 <?php
 require_once('../../DTO/Responses/GetUserByUsernameDTOResponse.php');
 include('../../BLL/versManager.php');
+
+include_once('../../DTO/Requests/GetQuestionsDTORequest.php');
+
 session_start();
 if (!isset($_SESSION['loggedUser'])) {
     echo "<script type='text/javascript'>"
@@ -47,8 +50,17 @@ if (!isset($_SESSION['loggedUser'])) {
     <br>
     <br>
         <?php
-        $questions = GetQuestions();
-        echo '<p>'.$questions.'</p>';
+        $getQuestionsDTORequest = new GetQuestionsDTORequest($_SESSION['loggedUser']->getLevel());
+        $questions = GetQuestions($getQuestionsDTORequest)->getResult();
+       
+        // print_r($questions[0]['phrase'].'<br>');
+        // print_r($questions[1]['phrase'].'<br>');
+        // print_r($questions[2]['phrase'].'<br>');
+        foreach($questions as $question){
+
+            echo '<p>'.$question.'</p>';
+        }
+
         ?>
         
     </div>
