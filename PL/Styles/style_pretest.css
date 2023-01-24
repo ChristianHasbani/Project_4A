@@ -72,7 +72,7 @@ header .container ul a{
     background-position: top;
 }
 
-.test p{
+.test form{
     width: 1500px;
     height: 100%;
     margin: 0 auto;
@@ -81,20 +81,3 @@ header .container ul a{
     justify-content: center;
 }
 
-.test button{
-    background-color: #007bff; 
-    color: #fff; 
-    border: none; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    font-size: 18px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    font-weight: bold; 
-    cursor: pointer; 
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.3); 
-    transition: all 0.2s; 
-    width: 300px;
-    height: 50px;
-    margin-top: 400px;
-}
