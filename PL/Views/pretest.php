@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/style_pretest.css">
     <title>Document</title>
+
+    <style>
+        input[type=button]{
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.3); 
+            transition: all 0.2s; 
+            width: 300px;
+            height: 50px;
+            margin-top: 400px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,7 +52,14 @@
         </div>
     </header>
     <div class="test">
-        <p><button id="start">Démarrer le test</button></p>
+    <form>
+        <input type="button" value="Démarrer le test" onclick="window.location.href='../Views/test.php'">
+    </form>
+    <?php
+        if(isset($_POST['submit'])) {
+        header('Location: ../Views/test.php');
+        }
+    ?>
     </div>
 </body>
 </html>
