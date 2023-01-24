@@ -70,9 +70,15 @@ if (!isset($_SESSION['loggedUser'])) {
                 $id = $question['verb_id'];
                 $getVerbByIdDTORequest = new GetVerbByIdDTORequest($id);
                 $verbs = getVerbById($getVerbByIdDTORequest);
-                echo '<input type="radio" name="question' . $counter . '">'.$verbs->getInfinitive();
-                echo '<input type="radio" name="question' . $counter . '">'.$verbs->getSimplePast();
-                echo '<input type="radio" name="question' . $counter . '">'.$verbs->getPastParticiple();
+                echo '<input type="radio" id="question' . $counter . '" name="question' . $counter . '"
+                value="'.$verbs->getInfinitive().'">'.$verbs->getInfinitive();
+
+                echo '<input type="radio" id="question' . $counter . '" name="question' . $counter . '"
+                value="'.$verbs->getSimplePast().'">'.$verbs->getSimplePast();
+                
+                echo '<input type="radio" id="question' . $counter . '" name="question' . $counter . '"
+                value="'.$verbs->getPastParticiple().'">'.$verbs->getPastParticiple();
+
                 $counter++;
             }
             ?>

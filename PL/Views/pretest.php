@@ -32,7 +32,9 @@
         </div>
     </header>
     <div class="test">
-        <p><button id="start">Démarrer le test</button></p>
+       <form action="test.php" method="">
+            <p><button id="start">Démarrer le test</button></p>
+       </form>
     </div>
 </body>
 </html>

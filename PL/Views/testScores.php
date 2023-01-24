@@ -23,22 +23,29 @@ if (!isset($_SESSION['loggedUser'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scores</title>
 </head>
 <body>
     <?php 
     if (isset($_POST['submit'])) {
         $ids = explode(',', $_GET['id']);
-        print_r($ids);
+        $choices = array();
+        for ($i = 1; $i < 6; $i++){
+            array_push($choices,$_POST['question' . $i]);
+        }
         $correct = 0;
-        $questions = array();
+        // $questions = array();
         foreach($ids as $id){
             $getPhrasesByIDFromDBDTORequest = new GetPhrasesByIDFromDBDTORequest($id);
             $question = getPhrasesByIDFromDB($getPhrasesByIDFromDBDTORequest)->getResult();
-            array_push($questions, $question);
+            // array_push($questions, $question);
+            $tense = $question->getTense();
+            $getVerbByIdDTORequest = new GetVerbByIdDTORequest($question->getVerbId());
+            $verb = getVerbById($getVerbByIdDTORequest);
+            print_r($verb);
         }
 
-        print_r($questions);
+        // print_r($questions);
     }
    ?>
 </body>
