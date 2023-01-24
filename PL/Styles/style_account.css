@@ -72,7 +72,7 @@ header .container ul a{
 }
 
 .compte .carre{
-    width: 60%;
+    width: 40%;
     height: 50vh;
     background-image: url(../Assets/image/cat.png);
     background-repeat: no-repeat;
@@ -85,9 +85,10 @@ header .container ul a{
    
 }
 
-.compte li{
+.compte .carre li{
+    width: 96%;
     margin-left: 10px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     margin-top:20px;
     height: 40px;
     background-color: #f2f2f2; 

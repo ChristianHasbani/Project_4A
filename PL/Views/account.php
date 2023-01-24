@@ -34,9 +34,6 @@ if (!isset($_SESSION['loggedUser'])) {
                     <li><a href="../Views/logout.php">Logout</a></li>
                 </ul>
             </div>
-            <div class="logo">
-                
-            </div>
         </div>
     </header>
 
