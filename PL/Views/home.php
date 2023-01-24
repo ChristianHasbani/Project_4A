@@ -42,7 +42,7 @@ session_start();
         </div>
     </div>
     <div class="sec2">
-        <p>Bienvenue sur notre site dédié à l'apprentissage des verbes irréguliers en anglais!
+        <p>Bienvenue <?php echo $_SESSION['loggedUser']->getFirstname() ?> sur notre site dédié à l'apprentissage des verbes irréguliers en anglais!
             Avec notre aide, vous pourrez maîtriser facilement ces verbes et améliorer votre anglais en général.
              Nous vous offrons des exercices interactifs et des tests pour vous entraîner.
               Rejoignez notre communauté d'apprenants et découvrez la simplicité de l'apprentissage des verbes 

@@ -1,3 +1,13 @@
+<?php
+require_once('../../DTO/Responses/GetUserByUsernameDTOResponse.php');
+session_start();
+if (!isset($_SESSION['loggedUser'])) {
+    echo "<script type='text/javascript'>"
+            . "alert('Please login to access this page, redirecting you to the login page');"
+            . " window.location.href='loginForm.php';"
+            . " </script> ";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +65,6 @@
     <form>
         <input type="button" value="Démarrer le test" onclick="window.location.href='../Views/test.php'">
     </form>
-    <?php
-        if(isset($_POST['submit'])) {
-        header('Location: ../Views/test.php');
-        }
-    ?>
     </div>
 </body>
 </html>

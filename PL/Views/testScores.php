@@ -14,7 +14,36 @@ if (!isset($_SESSION['loggedUser'])) {
             . " </script> ";
 }
 
-
+if (isset($_POST['submit'])) {
+    $ids = explode(',', $_GET['id']);
+    $choices = array();
+    for ($i = 1; $i < 6; $i++){
+        array_push($choices,$_POST['question' . $i]);
+    }
+    $correct = 0;
+    
+    // $questions = array();
+    for ($i = 0; $i < count($ids); $i++){
+        $getPhrasesByIDFromDBDTORequest = new GetPhrasesByIDFromDBDTORequest($ids[$i]);
+        $question = getPhrasesByIDFromDB($getPhrasesByIDFromDBDTORequest)->getResult();
+        // array_push($questions, $question);
+        $tense = $question->getTense();
+        $getVerbByIdDTORequest = new GetVerbByIdDTORequest($question->getVerbId());
+        $verbs = getVerbById($getVerbByIdDTORequest);
+        if($tense == 'Infinitive'){
+            if($choices[$i] ==$verbs->getInfinitive()){
+                $correct++;
+            }
+        }elseif($tense == 'Simple Past'){
+            if($choices[$i] ==$verbs->getSimplePast()){
+                $correct++;
+            }
+        }else{
+            if($choices[$i] == $verbs->getPastParticiple()){
+                $correct++;
+            }
+        }
+    }
 
 ?>
 <!DOCTYPE html>
@@ -27,38 +56,7 @@ if (!isset($_SESSION['loggedUser'])) {
 </head>
 <body>
     <?php 
-    if (isset($_POST['submit'])) {
-        $ids = explode(',', $_GET['id']);
-        $choices = array();
-        for ($i = 1; $i < 6; $i++){
-            array_push($choices,$_POST['question' . $i]);
-        }
-        $correct = 0;
-        
-        // $questions = array();
-        for ($i = 0; $i < count($ids); $i++){
-            $getPhrasesByIDFromDBDTORequest = new GetPhrasesByIDFromDBDTORequest($ids[$i]);
-            $question = getPhrasesByIDFromDB($getPhrasesByIDFromDBDTORequest)->getResult();
-            // array_push($questions, $question);
-            $tense = $question->getTense();
-            $getVerbByIdDTORequest = new GetVerbByIdDTORequest($question->getVerbId());
-            $verbs = getVerbById($getVerbByIdDTORequest);
-            if($tense == 'Infinitive'){
-                if($choices[$i] ==$verbs->getInfinitive()){
-                    $correct++;
-                }
-            }elseif($tense == 'Simple Past'){
-                if($choices[$i] ==$verbs->getSimplePast()){
-                    $correct++;
-                }
-            }else{
-                if($choices[$i] == $verbs->getPastParticiple()){
-                    $correct++;
-                }
-            }
-        }
         echo "number of correct scores: " . $correct;
-        // print_r($questions);
     }
    ?>
 </body>
