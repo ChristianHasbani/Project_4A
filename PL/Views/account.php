@@ -29,7 +29,7 @@ if (!isset($_SESSION['loggedUser'])) {
                 <ul>
                     <li><a href="../Views/home.php">Accueil</a></li>
                     <li><a href="../Views/verbs.php">Liste des verbes</a></li>
-                    <li><a href="../Views/test.html">English Test</a></li>
+                    <li><a href="../Views/test.php">English Test</a></li>
                     <li><a href="../Views/account.php">Mon compte</a></li>
                     <li><a href="../Views/logout.php">Logout</a></li>
                 </ul>

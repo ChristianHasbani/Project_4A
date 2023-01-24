@@ -1,5 +1,6 @@
 <?php
 require_once('../../DTO/Responses/GetUserByUsernameDTOResponse.php');
+include('../../BLL/versManager.php');
 session_start();
 if (!isset($_SESSION['loggedUser'])) {
     echo "<script type='text/javascript'>"
@@ -40,8 +41,16 @@ if (!isset($_SESSION['loggedUser'])) {
     </header>
     
     <div class="test">
-        <script src="../Scripts/test.js" defer></script>
-        <p><button id="start">Démarrer le test</button></p>
+        <!-- <script src="../Scripts/test.js" defer></script>
+        <p><button id="start">Démarrer le test</button></p> -->
+    <br>
+    <br>
+    <br>
+        <?php
+        $questions = GetQuestions();
+        echo '<p>'.$questions.'</p>';
+        ?>
+        
     </div>
 </body>
 </html>
