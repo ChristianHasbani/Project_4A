@@ -34,17 +34,30 @@ if (!isset($_SESSION['loggedUser'])) {
             array_push($choices,$_POST['question' . $i]);
         }
         $correct = 0;
+        
         // $questions = array();
-        foreach($ids as $id){
-            $getPhrasesByIDFromDBDTORequest = new GetPhrasesByIDFromDBDTORequest($id);
+        for ($i = 0; $i < count($ids); $i++){
+            $getPhrasesByIDFromDBDTORequest = new GetPhrasesByIDFromDBDTORequest($ids[$i]);
             $question = getPhrasesByIDFromDB($getPhrasesByIDFromDBDTORequest)->getResult();
             // array_push($questions, $question);
             $tense = $question->getTense();
             $getVerbByIdDTORequest = new GetVerbByIdDTORequest($question->getVerbId());
-            $verb = getVerbById($getVerbByIdDTORequest);
-            print_r($verb);
+            $verbs = getVerbById($getVerbByIdDTORequest);
+            if($tense == 'Infinitive'){
+                if($choices[$i] ==$verbs->getInfinitive()){
+                    $correct++;
+                }
+            }elseif($tense == 'Simple Past'){
+                if($choices[$i] ==$verbs->getSimplePast()){
+                    $correct++;
+                }
+            }else{
+                if($choices[$i] == $verbs->getPastParticiple()){
+                    $correct++;
+                }
+            }
         }
-
+        echo "number of correct scores: " . $correct;
         // print_r($questions);
     }
    ?>
