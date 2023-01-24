@@ -25,7 +25,26 @@ if (!isset($_SESSION['loggedUser'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tests</title>
     <link rel="stylesheet" href="../Styles/style_test.css">
-    
+    <style>
+        input[type=submit]{
+            display:block;
+            margin : auto;
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.3); 
+            transition: all 0.2s; 
+            width: 300px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
     <header>
