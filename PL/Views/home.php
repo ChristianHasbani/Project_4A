@@ -34,9 +34,6 @@ session_start();
                     ?>
                 </ul>
             </div>
-            <div class="logo">
-
-            </div>
         </div>
     </header>
     <div class="sec1">
