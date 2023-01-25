@@ -20,13 +20,6 @@
         <li><a href="../Views/verbs.php">Liste des verbes</a></li>
         <li><a href="../Views/pretest.php">English Test</a></li>
         <li><a href="../Views/account.php">Mon compte</a></li>
-        <?php 
-          if (!isset($_SESSION['loggedUser'])) {
-            echo '<li><a href="../Views/loginForm.php">Login</a></li>';
-          }else{
-            echo '<li><a href="../Views/logout.php">Logout</a></li>';
-          }
-        ?>
       </ul>
     </div>
   </div>
