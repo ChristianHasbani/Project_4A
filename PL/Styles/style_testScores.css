@@ -27,8 +27,6 @@ button {
 body {
     overflow-x: hidden;
     max-width: 1920px;
-    background-color: #31489f;
-    
 }
             /* HEADER */
 header{
@@ -49,7 +47,6 @@ header .container{
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color: violet;
     
 }
 
@@ -67,39 +64,31 @@ header .container ul a{
     
 }
 
-
-            /* SECTION 1 */
-
-
-.sec1{
-    height: 100vh;
+.boite{
+    margin-top: 120px;
     width: 100%;
-    background-color: white;
-    background-image: url(image/background_image.jpg);
-    background-repeat: no-repeat;
-    background-position: top right;
+    height: 50vh;
 }
 
-.sec1 .container{
-    width: 1500px;
-    height: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.sec1 h1{
-    font-size: 8em;
-    margin-bottom: 70px;
-    color: #31489f;
-
-}
-
-/*     SEC2    */
-
-.sec2{
-    height: 100vh;
-    width: 100%;
+.boite .box{
+    
+    height: 40px;
+    width: fit-content;
     background-color: gray;
+    display: block;
+    margin: auto;
 }
+
+
+.box p{
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 18px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-weight: bold; 
+}
+ 
